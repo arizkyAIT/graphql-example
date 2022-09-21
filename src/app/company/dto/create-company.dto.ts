@@ -1,4 +1,4 @@
-import { Field, InputType } from "@nestjs/graphql";
+import { Field, InputType, ObjectType } from "@nestjs/graphql";
 import { IsNotEmpty, IsOptional, MaxLength } from "class-validator";
 
 @InputType()
@@ -17,4 +17,15 @@ export class CreateCompanyDTO {
   @Field({ nullable: true })
   @IsOptional()
   address: string;
+}
+
+
+@InputType()
+export class PaginationDTO {
+
+  @Field()
+  limit: number;
+
+  @Field()
+  skip: number;
 }

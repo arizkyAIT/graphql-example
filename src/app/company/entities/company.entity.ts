@@ -38,3 +38,17 @@ export class Company {
   deleted_at: string;
 
 }
+
+
+@ObjectType()
+export class CompanyPagination {
+
+  @Field()
+  total: number;
+
+  @Field()
+  currentPage: number;
+
+  @Field(() => [Company])
+  data: Company[];
+}
